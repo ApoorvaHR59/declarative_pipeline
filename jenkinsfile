@@ -1,24 +1,24 @@
 pipeline{
-  agent any
+   agent any
    stages{
      stage('Fetching the code from remote repo'){
-        steps {
-         github url
+         steps {
+          git branch: 'main', url: 'https://github.com/dhanunjayasneha/maven_cont.git'
+           }
        }
-    }
-      stage('build phase'){
+     stage('build phase'){
         steps{
-           Job name
-       }
-     }
-      stage('testing phase'){
-        steps {
-           server
+          echo 'this is a bulid phase'
         }
       }
-      stage('deploy phase'){
+     stage('testing phase'){
+          steps{
+             echo 'this is a testing stage'
+         }
+       }
+     stage('deploy phase'){
          steps{
-            deploy information
+            echo 'deploy information'
         }
       }
     }
